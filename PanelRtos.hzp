@@ -1,0 +1,767 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="PanelRtos" target="8" version="2">
+  <project Name="PanelRtos">
+    <configuration
+      Family="STM32"
+      Name="Common"
+      Placement="Flash"
+      Target="STM32F746NG"
+      arm_architecture="v7EM"
+      arm_core_type="Cortex-M7"
+      arm_fp_abi="Hard"
+      arm_fpu_type="FPv5-SP-D16"
+      arm_gcc_target="arm-unknown-eabi"
+      arm_linker_heap_size="2048"
+      arm_linker_jtag_pad_pre_dr="1"
+      arm_linker_jtag_pad_pre_ir="5"
+      arm_linker_process_stack_size="0"
+      arm_linker_stack_size="2048"
+      arm_simulator_memory_simulation_filename="$(TargetsDir)/STM32/STM32SimulatorMemory$(HostDLL)"
+      arm_simulator_memory_simulation_parameter="STM32F746NG;0x100000;0x50000"
+      arm_target_connect_with_reset="Yes"
+      arm_target_debug_interface_type="ADIv5"
+      arm_target_interface_type="Default"
+      arm_target_loader_applicable_loaders="Flash"
+      arm_target_loader_default_loader="Flash"
+      arm_target_restrict_memory_accesses="Yes"
+      c_preprocessor_definitions="STARTUP_FROM_RESET;INITIALIZE_STACK;USE_HAL_DRIVER;STM32F746xx;STM32F7;STM32F746G_DISCO;STM32;STM32F746NGHx;USE_SPIRIT1_868MHz;P2P_DEMO;NO_EEPROM;USE_BASIC_PROTOCOL"
+      c_user_include_directories="$(ProjectDir)/inc;$(ProjectDir)/src;$(ProjectDir)/App;$(ProjectDir)/App/Common;$(ProjectDir)/App/Common/DotIndicator;$(ProjectDir)/App/Common/SwipeContainer;$(ProjectDir)/App/CustomKeyboard;$(ProjectDir)/App/FrontendApplication;$(ProjectDir)/App/FrontendHeap;$(ProjectDir)/App/KeyboardPresenter;$(ProjectDir)/App/KeyboardView;$(ProjectDir)/App/Language;$(ProjectDir)/App/MainView;$(ProjectDir)/App/MenuHomePresenter;$(ProjectDir)/App/MenuHomeView;$(ProjectDir)/App/MenuRoomPresenter;$(ProjectDir)/App/MenuRoomView;$(ProjectDir)/App/MenuSwitchPresenter;$(ProjectDir)/App/MenuSwitchView;$(ProjectDir)/App/Model;$(ProjectDir)/App/TestPresenter;$(ProjectDir)/CMSIS/core;$(ProjectDir)/CMSIS/device;$(ProjectDir)/Comunication;$(ProjectDir)/Comunication/ComVar;$(ProjectDir)/Comunication/Spirit;$(ProjectDir)/Comunication/Spirit/Lib;$(ProjectDir)/Comunication/Spirit/Util;$(ProjectDir)/Devices;$(ProjectDir)/Devices/Imterfaces;$(ProjectDir)/Devices/Device;$(ProjectDir)/Devices/DeviceRegister;$(ProjectDir)/Devices/Switch;$(ProjectDir)/HAL_Driver;$(ProjectDir)/HAL_Driver/Inc;$(ProjectDir)/HAL_Driver/Inc/Legacy;$(ProjectDir)/HAL_Driver/Src;$(ProjectDir)/Home;$(ProjectDir)/Home/Home;$(ProjectDir)/Home/Interfaces;$(ProjectDir)/Home/Room;$(ProjectDir)/Middlewares/Third_Party/FreeRTOS/Source;$(ProjectDir)/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;$(ProjectDir)/Middlewares/Third_Party/FreeRTOS/Source/include;$(ProjectDir)/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7;$(ProjectDir)/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/MemMang;$(ProjectDir)/MyClasses/CLed;$(ProjectDir)/MyClasses/CTimer;$(ProjectDir)/MyClasses/FmcSdram;$(ProjectDir)/MyClasses/FT5336;$(ProjectDir)/MyClasses/GestureDetector;$(ProjectDir)/MyClasses/Hardware;$(ProjectDir)/MyClasses/I2C;$(ProjectDir)/MyClasses/QSPI;$(ProjectDir)/MyClasses/StackChecker;$(ProjectDir)/MyClasses/TouchController;$(ProjectDir)/MyClasses/TouchState;$(ProjectDir)/ResourcesOut/Fonts;$(ProjectDir)/ResourcesOut/Images;$(ProjectDir)/ResourcesOut/Texts;$(ProjectDir)/Touch;$(ProjectDir)/Touch/AbstractButton;$(ProjectDir)/Touch/AbstractPartition;$(ProjectDir)/Touch/Application;$(ProjectDir)/Touch/Bitmap;$(ProjectDir)/Touch/Button;$(ProjectDir)/Touch/CacheManger;$(ProjectDir)/Touch/Callback;$(ProjectDir)/Touch/Circularfifo;$(ProjectDir)/Touch/ClickEvent;$(ProjectDir)/Touch/Color;$(ProjectDir)/Touch/ConstFont;$(ProjectDir)/Touch/Container;$(ProjectDir)/Touch/DMA;$(ProjectDir)/Touch/DMA_Interface;$(ProjectDir)/Touch/DMA_Operation;$(ProjectDir)/Touch/DragEvent;$(ProjectDir)/Touch/Drawable;$(ProjectDir)/Touch/EasingEquations;$(ProjectDir)/Touch/Event;$(ProjectDir)/Touch/Font;$(ProjectDir)/Touch/FontManager;$(ProjectDir)/Touch/GestureEvent;$(ProjectDir)/Touch/Image;$(ProjectDir)/Touch/InternalFlashFont;$(ProjectDir)/Touch/Keyboard;$(ProjectDir)/Touch/Lcd;$(ProjectDir)/Touch/ListLayout;$(ProjectDir)/Touch/Meta;$(ProjectDir)/Touch/MVPApplication;$(ProjectDir)/Touch/MVPHeap;$(ProjectDir)/Touch/Partition;$(ProjectDir)/Touch/Presenter;$(ProjectDir)/Touch/Rect;$(ProjectDir)/Touch/Screen;$(ProjectDir)/Touch/TextArea;$(ProjectDir)/Touch/TextAreaWithWildcard;$(ProjectDir)/Touch/Texts;$(ProjectDir)/Touch/TypedText;$(ProjectDir)/Touch/Types;$(ProjectDir)/Touch/UIEventListener;$(ProjectDir)/Touch/Unicode;$(ProjectDir)/Touch/View;$(ProjectDir)/Touch/Widget"
+      debug_register_definition_file="$(TargetsDir)/STM32/STM32F7x6_Peripherals.xml"
+      linker_memory_map_file="$(TargetsDir)/STM32/STM32F746NG_MemoryMap.xml"
+      linker_memory_map_macros="QUADSPI_FLASH_SIZE=0x1000000;SDRAM1_SIZE=200000"
+      linker_output_format="hex"
+      linker_section_placement_file="$(StudioDir)/targets/Cortex_M/flash_placement.xml"
+      macros="LOADER=$(TargetsDir)/ST_STM32F746G_DISCOVERY/Loader.elf"
+      project_directory=""
+      project_type="Executable"
+      property_groups_file_path="$(TargetsDir)/STM32/propertyGroups.xml"
+      target_get_partname_script="GetPartName()"
+      target_match_partname_script="MatchPartName(&quot;$(Target)&quot;)"
+      target_script_file="$(TargetsDir)/STM32/STM32_Target.js"
+      target_trace_initialize_script="EnableTrace(&quot;$(TraceInterfaceType)&quot;)" />
+    <configuration
+      Name="Flash"
+      arm_target_flash_loader_file_path="$(LOADER:$(TargetsDir)/STM32/Release/STM32F2xx_Loader_rpc.elf)"
+      arm_target_loader_can_erase_all="Yes"
+      arm_target_loader_can_lock_all="No"
+      arm_target_loader_can_lock_range="No"
+      arm_target_loader_can_unlock_all="No"
+      arm_target_loader_can_unlock_range="No"
+      target_reset_script="FLASHReset()" />
+    <configuration Name="RAM" target_reset_script="Reset()" />
+    <folder Name="Source Files">
+      <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
+      <file file_name="main.cpp">
+        <configuration
+          Name="THUMB Release"
+          gcc_optimization_level="Optimize For Size" />
+      </file>
+      <folder Name="App">
+        <folder Name="CustomKeyboard">
+          <file file_name="App/CustomKeyboard/CustomKeyboard.cpp" />
+          <file file_name="App/CustomKeyboard/CustomKeyboard.h" />
+          <file file_name="App/CustomKeyboard/KeyboardKeyMapping.h" />
+          <file file_name="App/CustomKeyboard/KeyboardLayout.h" />
+        </folder>
+        <folder Name="FrontendApplication">
+          <file file_name="App/FrontendApplication/FrontendApplication.cpp" />
+          <file file_name="App/FrontendApplication/FrontendApplication.h" />
+        </folder>
+        <folder Name="FrontendHeap">
+          <file file_name="App/FrontendHeap/FrontendHeap.h" />
+        </folder>
+        <folder Name="KeyboardPresenter">
+          <file file_name="App/KeyboardPresenter/KeyboardPresenter.cpp" />
+          <file file_name="App/KeyboardPresenter/KeyboardPresenter.h" />
+        </folder>
+        <folder Name="KeyboardView">
+          <file file_name="App/KeyboardView/KeyboardView.cpp" />
+          <file file_name="App/KeyboardView/KeyboardView.h" />
+        </folder>
+        <folder Name="MainView">
+          <file file_name="App/MainView/MainView.cpp" />
+          <file file_name="App/MainView/MainView.h" />
+        </folder>
+        <folder Name="TestPresenter">
+          <file file_name="App/TestPresenter/TestPresenter.cpp" />
+          <file file_name="App/TestPresenter/TestPresenter.h" />
+        </folder>
+        <folder Name="MenuHomePresenter">
+          <file file_name="App/MenuHomePresenter/MenuHomePresenter.cpp" />
+          <file file_name="App/MenuHomePresenter/MenuHomePresenter.h" />
+        </folder>
+        <folder Name="MenuHomeView">
+          <file file_name="App/MenuHomeView/MenuHomeView.cpp" />
+          <file file_name="App/MenuHomeView/MenuHomeView.h" />
+        </folder>
+        <folder Name="Common">
+          <folder Name="SwipeContainer">
+            <file file_name="App/Common/SwipeContainer/SwipeContainer.cpp" />
+            <file file_name="App/Common/SwipeContainer/SwipeContainer.h" />
+          </folder>
+          <folder Name="DotIndicator">
+            <file file_name="App/Common/DotIndicator/DotIndicator.cpp" />
+            <file file_name="App/Common/DotIndicator/DotIndicator.h" />
+          </folder>
+        </folder>
+        <configuration
+          Name="THUMB Release"
+          gcc_optimization_level="Optimize For Size" />
+        <folder Name="Model">
+          <file file_name="App/Model/Model.cpp" />
+          <file file_name="App/Model/Model.h" />
+          <file file_name="App/Model/ModelListener.cpp" />
+          <file file_name="App/Model/ModelListener.h" />
+        </folder>
+        <folder Name="MenuRoomView">
+          <file file_name="App/MenuRoomView/MenuRoomView.cpp" />
+          <file file_name="App/MenuRoomView/MenuRoomView.h" />
+        </folder>
+        <folder Name="MenuRoomPresenter">
+          <file file_name="App/MenuRoomPresenter/MenuRoomPresenter.cpp" />
+          <file file_name="App/MenuRoomPresenter/MenuRoomPresenter.h" />
+        </folder>
+        <folder Name="MenuSwitchPresenter">
+          <file file_name="App/MenuSwitchPresenter/MenuSwitchPresenter.cpp" />
+          <file file_name="App/MenuSwitchPresenter/MenuSwitchPresenter.h" />
+        </folder>
+        <folder Name="MenuSwitchView">
+          <file file_name="App/MenuSwitchView/MenuSwitchView.cpp" />
+          <file file_name="App/MenuSwitchView/MenuSwitchView.h" />
+        </folder>
+      </folder>
+      <folder Name="FreeRTOS">
+        <folder Name="Source">
+          <folder Name="CMIS_RTOS">
+            <file file_name="Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c" />
+            <file file_name="Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h" />
+          </folder>
+        </folder>
+        <folder Name="include">
+          <file file_name="Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h" />
+          <file file_name="Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h" />
+          <file file_name="Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h" />
+          <file file_name="Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h" />
+          <file file_name="Middlewares/Third_Party/FreeRTOS/Source/include/list.h" />
+          <file file_name="Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h" />
+          <file file_name="Middlewares/Third_Party/FreeRTOS/Source/include/portable.h" />
+          <file file_name="Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h" />
+          <file file_name="Middlewares/Third_Party/FreeRTOS/Source/include/queue.h" />
+          <file file_name="Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h" />
+          <file file_name="Middlewares/Third_Party/FreeRTOS/Source/include/StackMacros.h" />
+          <file file_name="Middlewares/Third_Party/FreeRTOS/Source/include/task.h" />
+          <file file_name="Middlewares/Third_Party/FreeRTOS/Source/include/timers.h" />
+        </folder>
+        <file file_name="Middlewares/Third_Party/FreeRTOS/Source/croutine.c" />
+        <file file_name="Middlewares/Third_Party/FreeRTOS/Source/event_groups.c" />
+        <file file_name="Middlewares/Third_Party/FreeRTOS/Source/list.c" />
+        <file file_name="Middlewares/Third_Party/FreeRTOS/Source/queue.c" />
+        <file file_name="Middlewares/Third_Party/FreeRTOS/Source/tasks.c" />
+        <file file_name="Middlewares/Third_Party/FreeRTOS/Source/timers.c" />
+        <folder Name="portable">
+          <folder Name="GCC">
+            <folder Name="ARM_CM7">
+              <file file_name="Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/portmacro.h" />
+              <file file_name="Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/port.c" />
+            </folder>
+          </folder>
+          <folder Name="MemMang">
+            <file file_name="Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c" />
+          </folder>
+        </folder>
+        <configuration
+          Name="THUMB Release"
+          gcc_optimization_level="Optimize For Size" />
+      </folder>
+      <folder Name="MyClasses">
+        <folder Name="CLed">
+          <file file_name="MyClasses/CLed/CLed.cpp" />
+          <file file_name="MyClasses/CLed/CLed.h" />
+        </folder>
+        <folder Name="CTimer">
+          <file file_name="MyClasses/CTimer/timer.cpp" />
+          <file file_name="MyClasses/CTimer/timer.h" />
+        </folder>
+        <folder Name="FmcSdram">
+          <file file_name="MyClasses/FmcSdram/CFmcSdram.cpp" />
+          <file file_name="MyClasses/FmcSdram/CFmcSdram.h" />
+        </folder>
+        <folder Name="FT5336">
+          <file file_name="MyClasses/FT5336/FT5336.cpp" />
+          <file file_name="MyClasses/FT5336/FT5336.h" />
+          <file file_name="MyClasses/FT5336/reg.h" />
+        </folder>
+        <folder Name="Hardware">
+          <file file_name="MyClasses/Hardware/Hardware.cpp" />
+          <file file_name="MyClasses/Hardware/Hardware.h" />
+        </folder>
+        <folder Name="I2C">
+          <file file_name="MyClasses/I2C/I2CDriver.cpp" />
+          <file file_name="MyClasses/I2C/I2CDriver.h" />
+        </folder>
+        <folder Name="QSPI">
+          <file file_name="MyClasses/QSPI/CQSPIDriver.cpp" />
+          <file file_name="MyClasses/QSPI/CQSPIDriver.h" />
+          <file file_name="MyClasses/QSPI/n25q128a.h" />
+        </folder>
+        <folder Name="TouchController">
+          <file file_name="MyClasses/TouchController/TouchController.cpp" />
+          <file file_name="MyClasses/TouchController/TouchController.h" />
+        </folder>
+        <folder Name="StackChecker">
+          <file file_name="MyClasses/StackChecker/StackChecker.cpp" />
+          <file file_name="MyClasses/StackChecker/StackChecker.h" />
+        </folder>
+        <folder Name="TouchState">
+          <file file_name="MyClasses/TouchState/TouchState.cpp" />
+          <file file_name="MyClasses/TouchState/TouchState.h" />
+        </folder>
+        <folder Name="GestureDetector">
+          <file file_name="MyClasses/GestureDetector/GestureDetector.cpp" />
+          <file file_name="MyClasses/GestureDetector/GestureDetector.h" />
+        </folder>
+        <configuration
+          Name="THUMB Release"
+          gcc_optimization_level="Optimize For Size" />
+      </folder>
+      <folder Name="HAL_Driver">
+        <folder Name="Inc">
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_adc.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_adc_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_can.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_cec.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_conf.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_conf_template.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_cortex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_crc.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_crc_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_cryp.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_cryp_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_dac.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_dac_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_dcmi.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_dcmi_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_def.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_dma.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_dma_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_dma2d.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_eth.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_flash.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_flash_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_gpio.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_gpio_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_hash.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_hash_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_hcd.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_i2c.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_i2c_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_i2s.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_irda.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_irda_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_iwdg.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_lptim.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_ltdc.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_nand.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_nor.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_pcd.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_pcd_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_pwr.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_qspi.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_rcc.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_rcc_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_rng.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_rtc.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_rtc_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_sai.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_sai_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_sd.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_sdram.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_smartcard.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_smartcard_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_spdifrx.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_spi.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_sram.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_tim.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_uart.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_usart.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_usart_ex.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_hal_wwdg.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_ll_fmc.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h" />
+          <file file_name="HAL_Driver/Inc/stm32f7xx_ll_usb.h" />
+          <folder Name="Legacy">
+            <file file_name="HAL_Driver/Inc/Legacy/stm32_hal_legacy.h" />
+          </folder>
+        </folder>
+        <folder Name="Src">
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_adc.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_adc_ex.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_can.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_cec.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_cortex.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_crc.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_crc_ex.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_cryp.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_cryp_ex.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_dac.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_dac_ex.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_dcmi.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_dcmi_ex.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_dma.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_dma_ex.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_dma2d.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_eth.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_flash.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_flash_ex.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_gpio.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_hash.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_hash_ex.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_hcd.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_i2c.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_i2c_ex.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_i2s.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_irda.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_iwdg.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_lptim.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_ltdc.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_msp_template.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_nand.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_nor.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_pcd.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_pwr.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_pwr_ex.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_qspi.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_rcc.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_rcc_ex.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_rng.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_rtc.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_rtc_ex.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_sai.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_sai_ex.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_sd.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_sdram.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_smartcard.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_smartcard_ex.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_spdifrx.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_spi.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_sram.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_tim.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_tim_ex.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_uart.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_usart.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_hal_wwdg.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_ll_fmc.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_ll_sdmmc.c" />
+          <file file_name="HAL_Driver/Src/stm32f7xx_ll_usb.c" />
+        </folder>
+        <configuration
+          Name="THUMB Release"
+          gcc_optimization_level="Optimize For Size" />
+      </folder>
+      <folder Name="CMSIS">
+        <folder Name="core">
+          <file file_name="CMSIS/core/arm_common_tables.h" />
+          <file file_name="CMSIS/core/arm_const_structs.h" />
+          <file file_name="CMSIS/core/arm_math.h" />
+          <file file_name="CMSIS/core/cmsis_armcc.h" />
+          <file file_name="CMSIS/core/cmsis_armcc_V6.h" />
+          <file file_name="CMSIS/core/cmsis_gcc.h" />
+          <file file_name="CMSIS/core/core_cm0.h" />
+          <file file_name="CMSIS/core/core_cm0plus.h" />
+          <file file_name="CMSIS/core/core_cm3.h" />
+          <file file_name="CMSIS/core/core_cm4.h" />
+          <file file_name="CMSIS/core/core_cm7.h" />
+          <file file_name="CMSIS/core/core_cmFunc.h" />
+          <file file_name="CMSIS/core/core_cmInstr.h" />
+          <file file_name="CMSIS/core/core_cmSimd.h" />
+          <file file_name="CMSIS/core/core_sc000.h" />
+          <file file_name="CMSIS/core/core_sc300.h" />
+        </folder>
+        <folder Name="device">
+          <file file_name="CMSIS/device/stm32f7xx.h" />
+          <file file_name="CMSIS/device/system_stm32f7xx.h" />
+          <file file_name="CMSIS/device/stm32f746xx.h" />
+        </folder>
+        <configuration
+          Name="THUMB Release"
+          gcc_optimization_level="Optimize For Size" />
+      </folder>
+      <folder Name="Touch">
+        <folder Name="AbstractButton">
+          <file file_name="Touch/AbstractButton/AbstractButton.cpp" />
+          <file file_name="Touch/AbstractButton/AbstractButton.h" />
+        </folder>
+        <folder Name="AbstractPartition">
+          <file file_name="Touch/AbstractPartition/AbstractPartition.cpp" />
+          <file file_name="Touch/AbstractPartition/AbstractPartition.h" />
+        </folder>
+        <folder Name="Application">
+          <file file_name="Touch/Application/Application.cpp" />
+          <file file_name="Touch/Application/Application.h" />
+        </folder>
+        <folder Name="Bitmap">
+          <file file_name="Touch/Bitmap/Bitmap.cpp" />
+          <file file_name="Touch/Bitmap/Bitmap.h" />
+        </folder>
+        <folder Name="Button">
+          <file file_name="Touch/Button/Button.cpp" />
+          <file file_name="Touch/Button/Button.h" />
+        </folder>
+        <folder Name="CacheManger">
+          <file file_name="Touch/CacheManger/CacheManager.cpp" />
+          <file file_name="Touch/CacheManger/CacheManager.h" />
+        </folder>
+        <folder Name="Callback">
+          <file file_name="Touch/Callback/Callback.h" />
+        </folder>
+        <folder Name="Circularfifo">
+          <file file_name="Touch/Circularfifo/Circularfifo.cpp" />
+          <file file_name="Touch/Circularfifo/Circularfifo.h" />
+        </folder>
+        <folder Name="ClickEvent">
+          <file file_name="Touch/ClickEvent/ClickEvent.cpp" />
+          <file file_name="Touch/ClickEvent/ClickEvent.h" />
+        </folder>
+        <folder Name="Color">
+          <file file_name="Touch/Color/Color.h" />
+        </folder>
+        <folder Name="ConstFont">
+          <file file_name="Touch/ConstFont/ConstFont.cpp" />
+          <file file_name="Touch/ConstFont/ConstFont.h" />
+        </folder>
+        <folder Name="Container">
+          <file file_name="Touch/Container/Container.cpp" />
+          <file file_name="Touch/Container/Container.h" />
+        </folder>
+        <file file_name="Touch/Touch.cpp" />
+        <file file_name="Touch/Touch.h" />
+        <folder Name="DMA">
+          <file file_name="Touch/DMA/DMA.cpp" />
+          <file file_name="Touch/DMA/DMA.h" />
+        </folder>
+        <folder Name="DMA_Interface">
+          <file file_name="Touch/DMA_Interface/DMA_Interface.h" />
+        </folder>
+        <folder Name="DMA_Operation">
+          <file file_name="Touch/DMA_Operation/DmaOperation.cpp" />
+          <file file_name="Touch/DMA_Operation/DmaOperation.h" />
+        </folder>
+        <folder Name="Drawable">
+          <file file_name="Touch/Drawable/Drawable.cpp" />
+          <file file_name="Touch/Drawable/Drawable.h" />
+        </folder>
+        <folder Name="Event">
+          <file file_name="Touch/Event/Event.cpp" />
+          <file file_name="Touch/Event/Event.h" />
+        </folder>
+        <folder Name="Font">
+          <file file_name="Touch/Font/Font.cpp" />
+          <file file_name="Touch/Font/Font.h" />
+        </folder>
+        <folder Name="FontManager">
+          <file file_name="Touch/FontManager/FontManager.cpp" />
+          <file file_name="Touch/FontManager/FontManager.h" />
+        </folder>
+        <folder Name="Image">
+          <file file_name="Touch/Image/Image.cpp" />
+          <file file_name="Touch/Image/Image.h" />
+        </folder>
+        <folder Name="InternalFlashFont">
+          <file file_name="Touch/InternalFlashFont/InternalFlashFont.cpp" />
+          <file file_name="Touch/InternalFlashFont/InternalFlashFont.h" />
+        </folder>
+        <folder Name="Keyboard">
+          <file file_name="Touch/Keyboard/Keyboard.cpp" />
+          <file file_name="Touch/Keyboard/Keyboard.h" />
+        </folder>
+        <folder Name="Lcd">
+          <file file_name="Touch/Lcd/Lcd.cpp" />
+          <file file_name="Touch/Lcd/Lcd.h" />
+        </folder>
+        <folder Name="Meta">
+          <file file_name="Touch/Meta/Meta.h" />
+        </folder>
+        <folder Name="MVPApplication">
+          <file file_name="Touch/MVPApplication/MVPApplication.cpp" />
+          <file file_name="Touch/MVPApplication/MVPApplication.h" />
+        </folder>
+        <folder Name="MVPHeap">
+          <file file_name="Touch/MVPHeap/MVPHeap.cpp" />
+          <file file_name="Touch/MVPHeap/MVPHeap.h" />
+        </folder>
+        <folder Name="Partition">
+          <file file_name="Touch/Partition/Partition.cpp" />
+          <file file_name="Touch/Partition/Partition.h" />
+        </folder>
+        <folder Name="Presenter">
+          <file file_name="Touch/Presenter/Presenter.cpp" />
+          <file file_name="Touch/Presenter/Presenter.h" />
+        </folder>
+        <folder Name="Rect">
+          <file file_name="Touch/Rect/Rect.cpp" />
+          <file file_name="Touch/Rect/Rect.h" />
+        </folder>
+        <folder Name="Screen">
+          <file file_name="Touch/Screen/Screen.cpp" />
+          <file file_name="Touch/Screen/Screen.h" />
+        </folder>
+        <folder Name="TextArea">
+          <file file_name="Touch/TextArea/TextArea.cpp" />
+          <file file_name="Touch/TextArea/TextArea.h" />
+        </folder>
+        <folder Name="TextAreaWithWildcard">
+          <file file_name="Touch/TextAreaWithWildcard/TextAreaWithWildcard.cpp" />
+          <file file_name="Touch/TextAreaWithWildcard/TextAreaWithWildcard.h" />
+        </folder>
+        <folder Name="Texts">
+          <file file_name="Touch/Texts/Texts.h" />
+        </folder>
+        <folder Name="TypedText">
+          <file file_name="Touch/TypedText/TypedText.cpp" />
+          <file file_name="Touch/TypedText/TypedText.h" />
+        </folder>
+        <folder Name="Types">
+          <file file_name="Touch/Types/Types.h" />
+        </folder>
+        <folder Name="UIEventListener">
+          <file file_name="Touch/UIEventListener/UIEventListener.cpp" />
+          <file file_name="Touch/UIEventListener/UIEventListener.h" />
+        </folder>
+        <folder Name="Unicode">
+          <file file_name="Touch/Unicode/Unicode.cpp" />
+          <file file_name="Touch/Unicode/Unicode.h" />
+        </folder>
+        <folder Name="View">
+          <file file_name="Touch/View/View.cpp" />
+          <file file_name="Touch/View/View.h" />
+        </folder>
+        <folder Name="Widget">
+          <file file_name="Touch/Widget/Widget.cpp" />
+          <file file_name="Touch/Widget/Widget.h" />
+        </folder>
+        <folder Name="ListLayout">
+          <file file_name="Touch/ListLayout/ListLayout.cpp" />
+          <file file_name="Touch/ListLayout/ListLayout.h" />
+        </folder>
+        <folder Name="DragEvent">
+          <file file_name="Touch/DragEvent/DragEvent.cpp" />
+          <file file_name="Touch/DragEvent/DragEvent.h" />
+        </folder>
+        <folder Name="GestureEvent">
+          <file file_name="Touch/GestureEvent/GestureEvent.cpp" />
+          <file file_name="Touch/GestureEvent/GestureEvent.h" />
+        </folder>
+        <folder Name="EasingEquations">
+          <file file_name="Touch/EasingEquations/EasingEquations.cpp" />
+          <file file_name="Touch/EasingEquations/EasingEquations.h" />
+        </folder>
+        <configuration
+          Name="THUMB Release"
+          gcc_optimization_level="Optimize For Size" />
+      </folder>
+      <folder Name="src">
+        <file file_name="src/system_stm32f7xx.c" />
+        <file file_name="src/stm32f7xx_it.c" />
+        <configuration
+          Name="THUMB Release"
+          gcc_optimization_level="Optimize For Size" />
+      </folder>
+      <folder Name="inc">
+        <file file_name="inc/FreeRTOSConfig.h" />
+        <file file_name="inc/stm32f7xx_it.h" />
+        <configuration
+          Name="THUMB Release"
+          gcc_optimization_level="Optimize For Size" />
+      </folder>
+      <folder Name="Home">
+        <folder Name="Interfaces">
+          <file file_name="Home/Interfaces/IHome.h" />
+          <file file_name="Home/Interfaces/IRoom.h" />
+          <file file_name="Home/Interfaces/IHome.cpp" />
+          <file file_name="Home/Interfaces/Lista.cpp" />
+          <file file_name="Home/Interfaces/Lista.h" />
+        </folder>
+        <folder Name="Home">
+          <file file_name="Home/Home/Home.cpp" />
+          <file file_name="Home/Home/Home.h" />
+        </folder>
+        <configuration
+          Name="THUMB Release"
+          gcc_optimization_level="Optimize For Size" />
+        <folder Name="Room">
+          <file file_name="Home/Room/Room.cpp" />
+          <file file_name="Home/Room/Room.h" />
+        </folder>
+      </folder>
+      <file file_name="MainDriver.cpp">
+        <configuration
+          Name="THUMB Release"
+          gcc_optimization_level="Optimize For Size" />
+      </file>
+      <file file_name="MainDriver.h" />
+      <folder Name="ResourceOut">
+        <folder Name="Images">
+          <file file_name="ResourcesOut/Images/Background.cpp" />
+          <file file_name="ResourcesOut/Images/BitmapDatabase.cpp" />
+          <file file_name="ResourcesOut/Images/BitmapDatabase.h" />
+          <file file_name="ResourcesOut/Images/Checked.cpp" />
+          <file file_name="ResourcesOut/Images/Exit.cpp" />
+          <file file_name="ResourcesOut/Images/Highlight_dot.cpp" />
+          <file file_name="ResourcesOut/Images/Kafelek.cpp" />
+          <file file_name="ResourcesOut/Images/Keyboard_background.cpp" />
+          <file file_name="ResourcesOut/Images/Keyboard_key_highlighted.cpp" />
+          <file file_name="ResourcesOut/Images/Keyboard_key2_highlighted.cpp" />
+          <file file_name="ResourcesOut/Images/Keyboard_space_highlighted.cpp" />
+          <file file_name="ResourcesOut/Images/Normal_dot.cpp" />
+          <file file_name="ResourcesOut/Images/Power.cpp" />
+          <file file_name="ResourcesOut/Images/Power_down.cpp" />
+          <file file_name="ResourcesOut/Images/Plus.cpp" />
+          <file file_name="ResourcesOut/Images/Plus_down.cpp" />
+          <file file_name="ResourcesOut/Images/Bg_room.cpp" />
+          <file file_name="ResourcesOut/Images/Room_icon.cpp" />
+          <file file_name="ResourcesOut/Images/Room_icon_down.cpp" />
+          <file file_name="ResourcesOut/Images/Cube.cpp" />
+          <file file_name="ResourcesOut/Images/Cube_down.cpp" />
+          <file file_name="ResourcesOut/Images/Message.cpp" />
+          <file file_name="ResourcesOut/Images/SwitchOffOff.cpp" />
+          <file file_name="ResourcesOut/Images/SwitchOff.cpp" />
+          <file file_name="ResourcesOut/Images/SwitchOff_Down.cpp" />
+          <file file_name="ResourcesOut/Images/SwitchOn.cpp" />
+          <file file_name="ResourcesOut/Images/SwitchOn_Down.cpp" />
+        </folder>
+        <folder Name="Fonts">
+          <file file_name="ResourcesOut/Fonts/ApplicationFontProvider.cpp" />
+          <file file_name="ResourcesOut/Fonts/ApplicationFontProvider.h" />
+          <file file_name="ResourcesOut/Fonts/Font_Calibri_16_8bpp.cpp" />
+          <file file_name="ResourcesOut/Fonts/Font_Cambria_10_8bpp.cpp" />
+          <file file_name="ResourcesOut/Fonts/FontGetters.cpp" />
+          <file file_name="ResourcesOut/Fonts/Table_Calibri_16_8bpp.cpp" />
+          <file file_name="ResourcesOut/Fonts/Table_Cambria_10_8bpp.cpp" />
+          <file file_name="ResourcesOut/Fonts/Font_Arial_11_8bpp.cpp" />
+          <file file_name="ResourcesOut/Fonts/Table_Arial_11_8bpp.cpp" />
+        </folder>
+        <folder Name="Texts">
+          <file file_name="ResourcesOut/Texts/languageGB.cpp" />
+          <file file_name="ResourcesOut/Texts/languagePL.cpp" />
+          <file file_name="ResourcesOut/Texts/Texts.cpp" />
+          <file file_name="ResourcesOut/Texts/TypedTextDatabase.cpp" />
+          <file file_name="ResourcesOut/Texts/TypedTextDatabase.h" />
+          <file file_name="ResourcesOut/Texts/TextKeysAndLanguages.h" />
+        </folder>
+        <configuration
+          Name="THUMB Release"
+          gcc_optimization_level="Optimize For Size" />
+      </folder>
+      <folder Name="Devices">
+        <folder Name="Interfaces">
+          <file file_name="Devices/Interfaces/IDevice.cpp" />
+          <file file_name="Devices/Interfaces/IDevice.h" />
+        </folder>
+        <folder Name="Device">
+          <file file_name="Devices/Device/Device.cpp" />
+          <file file_name="Devices/Device/Device.h" />
+          <file file_name="Devices/Device/CommandsDevice.h" />
+        </folder>
+        <folder Name="Switch">
+          <file file_name="Devices/Switch/Switch.cpp" />
+          <file file_name="Devices/Switch/Switch.h" />
+          <file file_name="Devices/Switch/CommandsDeviceSwitch.h" />
+        </folder>
+        <folder Name="DeviceRegister">
+          <file file_name="Devices/DeviceRegister/DeviceRegister.cpp" />
+          <file file_name="Devices/DeviceRegister/DeviceRegister.h" />
+        </folder>
+      </folder>
+      <folder Name="Comunication">
+        <folder Name="ComVar">
+          <file file_name="Comunication/ComVar/ComVar.cpp" />
+          <file file_name="Comunication/ComVar/ComVar.h" />
+        </folder>
+        <file file_name="Comunication/Communication.cpp" />
+        <file file_name="Comunication/Communication.h" />
+        <file file_name="Comunication/FramePacket.h" />
+        <folder Name="Spirit">
+          <folder Name="Lib">
+            <file file_name="Comunication/Spirit/Lib/CSpiritCalibration.cpp" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritCalibration.h" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritCommand.cpp" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritCommand.h" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritGeneral.cpp" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritGeneral.h" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritGpio.cpp" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritGpio.h" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritIrq.cpp" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritIrq.h" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritLinearFiFo.cpp" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritLinearFiFo.h" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritManagement.cpp" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritManagement.h" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritPktBasic.cpp" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritPktBasic.h" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritPktCommon.cpp" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritPktCommon.h" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritQi.cpp" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritQi.h" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritRadio.cpp" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritRadio.h" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritTimer.cpp" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritTimer.h" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritTypes.cpp" />
+            <file file_name="Comunication/Spirit/Lib/CSpiritTypes.h" />
+            <file file_name="Comunication/Spirit/Lib/SpiritConfig.h" />
+            <file file_name="Comunication/Spirit/Lib/SpiritRegs.h" />
+          </folder>
+          <folder Name="Util">
+            <file file_name="Comunication/Spirit/Util/CSpiritInterface.cpp" />
+            <file file_name="Comunication/Spirit/Util/CSpiritInterface.h" />
+            <file file_name="Comunication/Spirit/Util/CSpiritSpi.cpp" />
+            <file file_name="Comunication/Spirit/Util/CSpiritSpi.h" />
+            <file file_name="Comunication/Spirit/Util/CSpiritUtil.cpp" />
+            <file file_name="Comunication/Spirit/Util/CSpiritUtil.h" />
+          </folder>
+          <file file_name="Comunication/Spirit/CSpiritApp.cpp" />
+          <file file_name="Comunication/Spirit/CSpiritApp.h" />
+          <file file_name="Comunication/Spirit/RadioConfParam.h" />
+        </folder>
+      </folder>
+    </folder>
+    <folder Name="System Files">
+      <file file_name="$(StudioDir)/source/thumb_crt0.s" />
+      <file file_name="$(TargetsDir)/STM32/STM32_Startup.s" />
+      <file file_name="STM32F746NG_MemoryMap.xml" />
+      <file file_name="flash_placement.xml" />
+      <configuration
+        Name="THUMB Release"
+        gcc_optimization_level="Optimize For Size" />
+    </folder>
+  </project>
+  <configuration Name="THUMB Debug" inherited_configurations="THUMB;Debug" />
+  <configuration
+    Name="THUMB"
+    Platform="ARM"
+    arm_instruction_set="Thumb"
+    arm_library_instruction_set="Thumb"
+    c_preprocessor_definitions="__THUMB"
+    hidden="Yes" />
+  <configuration
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG"
+    gcc_debugging_level="Level 3"
+    gcc_optimization_level="None"
+    hidden="Yes" />
+  <configuration
+    Name="THUMB Release"
+    inherited_configurations="THUMB;Release" />
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_debugging_level="Level 1"
+    gcc_optimization_level="Level 1"
+    hidden="Yes" />
+</solution>
